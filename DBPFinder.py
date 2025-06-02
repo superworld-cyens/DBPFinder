@@ -324,10 +324,6 @@ elif st.button("Run Simulation & Show Results"):
                 selected_nodes = [str(n).strip() for n in selected_nodes]
                 nodes = df[df[node_column].isin(selected_nodes)].copy()
 
-                if nodes.empty:
-                    print("⚠️ No matching nodes found for bar plot.")
-                    return
-
                 nodes = nodes.sort_values(by=value_column, ascending=True)
 
                 plt.figure(figsize=(10, 6))
