@@ -275,6 +275,7 @@ elif st.button("Run Simulation & Show Results"):
             top_detection_time_nodes = filtered_nodes.nsmallest(sensor_number, "Detection_Time")["Node"]
             top_thm_event_nodes = filtered_nodes.nlargest(sensor_number, "THM_Event")["Node"] if "THM_Event" in data else []
             top_haa5_event_nodes = filtered_nodes.nlargest(sensor_number, "HAA5_Event")["Node"] if "HAA5_Event" in data else []
+            top_contract_nodes = filtered_nodes.nlargest(sensor_number, "Contracts")["Node"]
 
             def plot_sensor_placement(wn, sensor_nodes, title="Sensor Node Placement"):
                 x_all, y_all = [], []
@@ -354,6 +355,17 @@ elif st.button("Run Simulation & Show Results"):
                     value_column="Detection_Time",
                     selected_nodes=top_detection_time_nodes,
                     title="Time of Detection for Sensor Placement",
+                    color="orange"
+                )
+
+            if contracts:
+                plot_sensor_placement(wn, top_contract_nodes, title ="Placement by Contracts")
+                plot_bar_for_placement(
+                    df=filtered_nodes,
+                    node_column="Node",
+                    value_column="Contracts",
+                    selected_nodes=top_contract_nodes,
+                    title="Contracts for Sensor Placement",
                     color="orange"
                 )
 
