@@ -27,7 +27,8 @@
 
 <h2>📝Changelog</h2>
 - v1.0 -> Release of DBPFinder. </br>
-- v1.0.1 -> Bug fixes related to the "contracts" performance objective.
+- v1.0.1 -> Bug fixes related to the "contracts" performance objective. </br>
+- v1.0.2 -> Several bug fixes related to the performance objectives & new environmental data example. 
 
 
 <h2>📦Requirements</h2>
