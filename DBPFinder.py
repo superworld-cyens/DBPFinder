@@ -246,6 +246,7 @@ elif st.button("Run Simulation & Show Results"):
             idx = series[series >= chlorine_threshold].first_valid_index()
             detection_times[node] = (time_steps.get_loc(idx) * wn.options.time.hydraulic_timestep / 60) if idx else None
         data["Detection_Time"] = data["Node"].map(detection_times)
+        data["Detection_Time"] = pd.to_numeric(data["Detection_Time"], errors="coerce")
 
         required = ["TOC", "Cl2", "Br", "Temp", "pH"]
         if not all(col in data.columns for col in required):
@@ -275,7 +276,7 @@ elif st.button("Run Simulation & Show Results"):
             top_detection_time_nodes = filtered_nodes.nsmallest(sensor_number, "Detection_Time")["Node"]
             top_thm_event_nodes = filtered_nodes.nlargest(sensor_number, "THM_Event")["Node"] if "THM_Event" in data else []
             top_haa5_event_nodes = filtered_nodes.nlargest(sensor_number, "HAA5_Event")["Node"] if "HAA5_Event" in data else []
-            top_contract_nodes = filtered_nodes.nlargest(sensor_number, "Contracts")["Node"]
+            if contracts: top_contract_nodes = filtered_nodes.nlargest(sensor_number, "Contracts")["Node"]
 
             def plot_sensor_placement(wn, sensor_nodes, title="Sensor Node Placement"):
                 x_all, y_all = [], []
