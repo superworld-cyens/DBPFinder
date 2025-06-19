@@ -25,6 +25,10 @@
 <h2>Examples Folder </h2>
 <p>The "Examples" folder contains 3 different files to showcase what is required for the software to run the simulations correctly. It contains a file for the water distribution network, a sample of environmental data and how the excel file should be constructed as well as a contracts text file to tackle the performance objective of minmizing the mass consumption.</p>
 
+<h2>📝Changelog</h2>
+- v1.0 -> Release of DBPFinder. </br>
+- v1.0.1 -> Bug fixes related to the "contracts" performance objective.
+
 
 <h2>📦Requirements</h2>
 - Python 3.7+
