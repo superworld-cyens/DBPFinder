@@ -22,7 +22,7 @@
 - Load Excel or CSV files with environmental conditions
 
 <h2>📖Manual</h2>
-<p>You can find the manual of the software [here](https://superworld.cyens.org.cy/projects/dbp_finder/DBPFinder_Documentation_v1.pdf).</p>
+<p>You can find the manual of the software here: https://superworld.cyens.org.cy/projects/dbp_finder/DBPFinder_Documentation_v1.pdf.</p>
 
 <h2>Examples Folder </h2>
 <p>The "Examples" folder contains 3 different files to showcase what is required for the software to run the simulations correctly. It contains a file for the water distribution network, a sample of environmental data and how the excel file should be constructed as well as a contracts text file to tackle the performance objective of minmizing the mass consumption.</p>
